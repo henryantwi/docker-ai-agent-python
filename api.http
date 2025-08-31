@@ -18,7 +18,7 @@ POST https://docker-ai-fastapi-python-4m94j.ondigitalocean.app/api/chat/
 Content-Type: application/json
 
 {
-    "message": "Good Morning 1!"
+    "message": "Why is it bad to eat junk foods a lot?"
 }
 
 ###
@@ -56,3 +56,13 @@ curl http://localhost:12434/engines/v1/chat/completions \
             }
         ]
     }'
+
+###
+POST http://localhost:8080/api/chats/
+Content-Type: application/json
+
+{
+    "message": "Research why it is good to go outside and email me the results"
+}
+
+###

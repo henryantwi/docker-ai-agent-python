@@ -6,6 +6,7 @@ class ChatMessagePayload(SQLModel):
     # this is for validation
     message: str
 
+
 class ChatMessage(SQLModel, table=True):
     # this is for database (i.e. saving, updating, deleting, getting, etc.)
     id: int | None = Field(default=None, primary_key=True)
