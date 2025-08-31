@@ -126,7 +126,7 @@ Create a `.env` file in the project root:
 OPENAI_API_KEY=your_openai_api_key_here
 
 # Database Configuration
-DATABASE_URL=postgresql://admin:password@localhost:5432/my_database
+DATABASE_URL=postgresql+psycopg://admin:password@localhost:5432/my_database
 
 # Gmail/Email Configuration
 EMAIL_SERVER=smtp.gmail.com
