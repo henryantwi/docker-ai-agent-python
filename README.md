@@ -1,4 +1,4 @@
-# Deploy AI Agent 🤖
+# Docker AI Agent Python 🤖
 
 An intelligent email management system powered by LangGraph and OpenAI that combines research capabilities with automated email operations. This AI agent can research topics, compose emails, send them, and manage your inbox through a conversational chat interface.
 
@@ -87,8 +87,8 @@ PORT=8000
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
-   cd deploy-ai-agent
+   git clone https://github.com/henryantwi/docker-ai-agent-python.git
+   cd docker-ai-agent-python
    ```
 
 2. **Set up environment variables**
@@ -202,12 +202,12 @@ The AI agents have access to these tools:
 
 1. **Build and tag the image**:
    ```bash
-   docker build -f backend/Dockerfile -t your-username/deploy-ai-agent:v1 ./backend
+   docker build -f backend/Dockerfile -t your-username/docker-ai-agent-python:v1 ./backend
    ```
 
 2. **Push to Docker Hub**:
    ```bash
-   docker push your-username/deploy-ai-agent:v1
+   docker push your-username/docker-ai-agent-python:v1
    ```
 
 ### DigitalOcean App Platform
@@ -238,7 +238,7 @@ curl -X POST http://localhost:8080/api/chat/ \
 ## 📁 Project Structure
 
 ```
-deploy-ai-agent/
+docker-ai-agent-python/
 ├── backend/
 │   ├── src/
 │   │   ├── api/
