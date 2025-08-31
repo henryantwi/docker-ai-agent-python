@@ -198,3 +198,4 @@ cython_debug/
 src/ignoreme
 .env.db
 docker-commands.md
+api.http

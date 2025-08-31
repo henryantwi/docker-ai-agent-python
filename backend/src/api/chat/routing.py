@@ -3,24 +3,26 @@ from sqlmodel import Session, select
 
 from .models import ChatMessagePayload, ChatMessage, ChatMessageListItem
 from api.db import get_session
+from api.ai.services import generate_email_message
+from api.ai.schemas import EmailMessageSchema
 
 
 router = APIRouter(prefix="/chat", tags=["chat"])
 
 
-@router.post("/", response_model=ChatMessage | None, dependencies=[Depends(get_session)])
+@router.post("/", response_model=EmailMessageSchema | None, dependencies=[Depends(get_session)])
 async def create_chat_message(
     payload: ChatMessagePayload,
     session: Session = Depends(get_session),
-) -> ChatMessage | None:
+) -> EmailMessageSchema | None:
     data = payload.model_dump()
     print(data)
     obj = ChatMessage.model_validate(data)
     session.add(obj)
     session.commit()
-    session.refresh(obj)
-    
-    return obj
+    # session.refresh(obj)
+    response = generate_email_message(data.get("message"))
+    return response
 
 
 @router.get(

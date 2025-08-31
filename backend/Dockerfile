@@ -4,6 +4,8 @@ FROM python:3.13.4-slim-bullseye
 # Create a non-root user
 RUN groupadd -r appuser && useradd -r -g appuser appuser
 
+RUN apt-get update && apt-get install -y curl
+
 # Create Virtual environment
 RUN python -m venv /opt/venv/
 
